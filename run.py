@@ -51,7 +51,7 @@ def run(input_path, output_path, model_path):
 
         depth = utils.resize_depth(out, img.shape[1], img.shape[0])
         
-        torch.save({'img': img, 'dpt': depth}, os.path.join(output_path, img_name + '.pth'))
+        torch.save({'img': img, 'dpt': depth}, os.path.join(output_path, img_name.split('/')[-1].split('.')[0] + '.pth'))
 
         # output
         filename = os.path.join(
